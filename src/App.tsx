@@ -1,11 +1,11 @@
 import './App.css'
-import MainCalendar from './features/MainCalendar'
+import Scheduler from './features/Scheduler/Scheduler'
 
 function App() {
 
   return (
       <div className="card">
-        <MainCalendar></MainCalendar>
+        <Scheduler></Scheduler>
       </div>
   )
 }
