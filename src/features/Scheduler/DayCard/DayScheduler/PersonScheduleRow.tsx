@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { InputNumber } from "primereact/inputnumber";
+import { useState } from "react";
 import { Button } from "primereact/button";
 import classes from "./PersonScheduleRow.module.css";
 import { Dropdown } from "primereact/dropdown";

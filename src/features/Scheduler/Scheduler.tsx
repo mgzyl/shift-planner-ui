@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import PreviewCalendarCard from "./PreviewCalendarCard/PreviewCalendarCard";
 import DayCard from "./DayCard/DayCard";
 import classes from "./Scheduler.module.css";

@@ -1,4 +1,3 @@
-import React from "react";
 import DayScheduler from "./DayScheduler/DayScheduler";
 
 type Props = {
