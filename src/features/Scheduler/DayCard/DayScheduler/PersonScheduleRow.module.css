@@ -1,0 +1,13 @@
+.cell {
+    padding: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: larger;
+    width: 100%;
+    height: 65px;
+}
+
+.hourInput {
+    width: 6rem;
+}

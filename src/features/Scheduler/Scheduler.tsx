@@ -18,8 +18,12 @@ function Scheduler() {
     }
 
     return <div className={classes.mainContainer}>
-        <PreviewCalendarCard filledDates={filledDates} setSelectedDate={setSelectedDate}/>
-        <DayCard selectedDate={previewDate}/>
+        <div className={classes.section}>
+            <PreviewCalendarCard filledDates={filledDates} setSelectedDate={setSelectedDate}/>
+        </div>
+        <div className={classes.section}>
+            <DayCard selectedDate={previewDate}/>
+        </div>
     </div>
 }
 

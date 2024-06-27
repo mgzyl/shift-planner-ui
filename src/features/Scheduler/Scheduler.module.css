@@ -1,3 +1,22 @@
 .mainContainer {
     display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+}
+
+.section {
+    margin: 0 0 1rem 0
+}
+
+@media only screen and (min-width: 768px) {
+    .mainContainer {
+        flex-direction: row;
+    }
+
+    .section {
+        margin: 3rem;
+        width: 100%;
+    }
 }

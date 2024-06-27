@@ -9,15 +9,17 @@ type Props = {
 }
 
 function DayScheduler(props: Props) {
-    const personel = ["Adam", "Bart", "Chris"]
+    const personel = ["Adam", "Bart", "Christopher"]
 
     return <Card>
-            <Calendar 
-                value={props.selectedDate} 
-                disabled 
-                dateFormat={"d MM yy"}
-                locale="pl">
-            </Calendar>
+            <div>
+                <Calendar 
+                    value={props.selectedDate} 
+                    disabled 
+                    dateFormat={"d MM yy"}
+                    locale="pl">
+                </Calendar>
+            </div>
             <div className={classes.mainGrid}>
                 {personel.map((name, ind) => (<PersonScheduleRow key={ind} name={name}></PersonScheduleRow>))}
             </div>
