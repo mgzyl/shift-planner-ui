@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PreviewCalendarCard from "./PreviewCalendarCard/PreviewCalendarCard";
 import DayCard from "./DayCard/DayCard";
+import classes from "./Scheduler.module.css";
 
 export type SelectedDateType = undefined | null | string | Date | Date[];
 
@@ -16,7 +17,7 @@ function Scheduler() {
         }
     }
 
-    return <div>
+    return <div className={classes.mainContainer}>
         <PreviewCalendarCard filledDates={filledDates} setSelectedDate={setSelectedDate}/>
         <DayCard selectedDate={previewDate}/>
     </div>

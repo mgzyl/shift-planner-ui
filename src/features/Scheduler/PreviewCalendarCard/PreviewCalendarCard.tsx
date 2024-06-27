@@ -13,8 +13,6 @@ function PreviewCalendarCard(props: Props) {
         <Card title={"Kalendarz"}>
             <Calendar 
                 value={props.filledDates} 
-                view="date" 
-                dateFormat="mm/yy"
                 inline
                 selectionMode="multiple"
                 onSelect={(e) => props.setSelectedDate(e.value)}
