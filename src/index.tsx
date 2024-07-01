@@ -5,6 +5,8 @@ import { PrimeReactProvider } from 'primereact/api';
 import "primereact/resources/themes/md-light-indigo/theme.css";
 import 'primeicons/primeicons.css';
 import { addLocale } from 'primereact/api';
+import { store } from './store'
+import { Provider } from 'react-redux'
 
 addLocale('pl', {
   firstDayOfWeek: 1,
@@ -19,7 +21,9 @@ addLocale('pl', {
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <PrimeReactProvider>
-      <App />
+      <Provider store={store}>
+        <App />
+      </Provider>
     </PrimeReactProvider>
   </React.StrictMode>,
 )

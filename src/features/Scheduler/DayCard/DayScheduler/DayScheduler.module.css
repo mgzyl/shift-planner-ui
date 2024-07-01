@@ -2,3 +2,13 @@
     display: grid;
     grid-template-columns: auto 106px 106px 60px;
 }
+
+.dateContainer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.dateField {
+    margin: 0 20px
+}

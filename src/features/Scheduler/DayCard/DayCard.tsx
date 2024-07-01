@@ -7,7 +7,7 @@ type Props = {
 function DayCard(props: Props) {
 
     return <div>
-        {props.selectedDate ? <DayScheduler selectedDate={props.selectedDate} /> : null}
+        {props.selectedDate ? <DayScheduler personel={["Adam", "Bart", "Christopher"]} selectedDate={props.selectedDate} /> : null}
     </div>
 }
 

@@ -1,0 +1,61 @@
+{
+    "employeeInfo": {
+        "employeeData": [
+            {
+                "name": "Adam",
+                "id": "adm",
+                "expectedHours": 90,
+                "currentHours": 6,
+                "availability": [3,4,5,6,7,12,13,14,15,17,18]
+            },
+            {
+                "name": "Bart",
+                "id": "brt",
+                "expectedHours": 40,
+                "currentHours": 8,
+                "availability": [3,4,5,6,7,8,10,11,12,13,14,15,17,18,19,20,21,22,24,25,26,27,28,29]
+            },
+            {
+                "name": "Christopher",
+                "id": "chr",
+                "expectedHours": 170,
+                "currentHours": 10,
+                "availability": [3,4,5,6,7,8,10,11,12,13,14,15,17]
+            }
+        ]
+    },
+    "calendar": {
+        "3": {
+            "valid": true,
+            "comments": "",
+            "shifts": [
+                {
+                    "id": "brt",
+                    "start": 8,
+                    "end": 16
+                },
+                {
+                    "id": "chr",
+                    "start": 16,
+                    "end": 20
+                }
+            ]
+        },
+        "4": {
+            "valid": true,
+            "comments": "",
+            "shifts": [
+                {
+                    "id": "adm",
+                    "start": 8,
+                    "end": 14
+                },
+                {
+                    "id": "chr",
+                    "start": 14,
+                    "end": 20
+                }
+            ]
+        }
+    }
+}

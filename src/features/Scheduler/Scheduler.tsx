@@ -16,7 +16,7 @@ function Scheduler() {
             setPreviewDate(undefined);
         }
     }
-
+ 
     return <div className={classes.mainContainer}>
         <div className={classes.section}>
             <PreviewCalendarCard filledDates={filledDates} setSelectedDate={setSelectedDate}/>
