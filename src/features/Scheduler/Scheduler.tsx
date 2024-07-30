@@ -1,28 +1,29 @@
-import {useEffect, useState} from "react";
 import PreviewCalendarCard from "./PreviewCalendarCard/PreviewCalendarCard";
 import DayCard from "./DayCard/DayCard";
 import classes from "./Scheduler.module.css";
-import {useDispatch} from "react-redux";
+import { changeDate } from "./shiftDataSlice.ts";
+import {useAppDispatch, useAppSelector} from "../../hooks.ts";
+// import {useDispatch} from "react-redux";
 
 export type SelectedDateType = undefined | null | string | Date | Date[];
 
 function Scheduler() {
-    const [previewDate, setPreviewDate] = useState<undefined | Date>();
-    const [initialData, setInitialData] = useState()
+    // const [initialData, setInitialData] = useState()
     const filledDates = [new Date(2024, 5, 12), new Date(2024, 5, 15)];
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
+    const selectedDate = useAppSelector((state) => state.shiftDataReducer.selectedDate);
 
-    useEffect(() => {
-        if(initialData === null) {
-            dispatch(fetchInitialData)
-        }
-    });
+    // useEffect(() => {
+    //     if(initialData === null) {
+    //         dispatch(fetchInitialData)
+    //     }
+    // });
 
     const setSelectedDate = (selectedDate: SelectedDateType) => {
         if(selectedDate instanceof Date) {
-            setPreviewDate(selectedDate);
+            dispatch(changeDate(selectedDate));
         } else {
-            setPreviewDate(undefined);
+            dispatch(changeDate(undefined));
         }
     }
 
@@ -31,7 +32,7 @@ function Scheduler() {
             <PreviewCalendarCard filledDates={filledDates} setSelectedDate={setSelectedDate}/>
         </div>
         <div className={classes.section}>
-            <DayCard selectedDate={previewDate}/>
+            <DayCard selectedDate={selectedDate}/>
         </div>
     </div>
 }

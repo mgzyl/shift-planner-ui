@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
 import rootReducer from './reducers.ts';
-// @ts-ignore
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
 import loggerMiddleware from "./middleware/loggerMiddleware";
 
 export const store = configureStore({

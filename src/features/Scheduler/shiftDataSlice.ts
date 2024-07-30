@@ -1,4 +1,4 @@
-import { createSlice} from "@reduxjs/toolkit";
+import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 
 type AddShiftAction = {
     payload: AddShiftActionPayload,
@@ -8,17 +8,41 @@ type AddShiftAction = {
 type AddShiftActionPayload = {
     dayNumber: number,
     employee: string,
-    startTime: any,
-    endTime: any
+    startTime: number,
+    endTime: number
 }
 
-export const shiftDataSlice = createSlice({
-    name: "fetchEmployeeData",
-    initialState: {
-        calendar: {
-
+export interface ShiftDataType {
+    calendar: {
+        [key: string]: {
+            shifts: {
+                id: string,
+                start: number,
+                end: number
+            }[]
         }
     },
+    selectedDate: Date | undefined,
+}
+
+const initialState: ShiftDataType = {
+        calendar: {
+            "3": {
+                "shifts": [
+                    {
+                        "id": "employee1",
+                        "start": 9,
+                        "end": 17
+                    }
+                ]
+            }
+        },
+        selectedDate: undefined,
+    }
+
+export const shiftDataSlice = createSlice({
+    name: "shiftDataReducer",
+    initialState,
     reducers: {
         // fetchData: state => {
         //
@@ -35,9 +59,12 @@ export const shiftDataSlice = createSlice({
                 ]
             }
             Object.defineProperty(state.calendar, dayNumber, dayDefinition)
+        },
+        changeDate: (state, action: PayloadAction<Date | undefined>) => {
+            state.selectedDate = action.payload
         }
     }
 })
 
-export const { addShift } = shiftDataSlice.actions
+export const { addShift, changeDate } = shiftDataSlice.actions
 export default shiftDataSlice.reducer
